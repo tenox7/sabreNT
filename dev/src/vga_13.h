@@ -37,6 +37,7 @@ extern int   SCREEN_HEIGHT;              /* logical height of rendering screen *
 extern int   MXSCREEN_WIDTH;             /* width of video screen              */
 extern int   MXSCREEN_HEIGHT;            /* height of video screen             */
 extern int   SCREEN_PITCH;               /* actual byte width of screen        */
+extern int   cockpitScale;              /* 1, 2, or 4 for cockpit upscaling   */
 extern int   MAX_X;                      /* usually SCREEN_WIDTH - 1           */
 extern int   MAX_Y;                      /* usually SCREEN_HEIGHT - 1          */
 extern int   N_COLORS;                   /* 256 for now                        */

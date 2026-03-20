@@ -28,6 +28,7 @@
 #define __instrument_h
 
 extern int cockpit_y, cockpit_x;
+extern int cockpitScale;
 class TextrMap;
 class Indicator
 {
@@ -50,8 +51,9 @@ public:
   {
     is >> x >> y >> width >> range;
     is >> scale >> color;
-    x += cockpit_x;
-    y += cockpit_y;
+    x = x * cockpitScale + cockpit_x;
+    y = y * cockpitScale + cockpit_y;
+    width *= cockpitScale;
   }
   virtual void init()
   {}

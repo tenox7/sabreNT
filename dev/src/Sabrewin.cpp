@@ -922,7 +922,7 @@ void setFlightMenuControls()
                  fc->autopilot ? MF_CHECKED : MF_UNCHECKED);
    CheckMenuItem(hmenu,CM_SABREGUNS, MF_BYCOMMAND |
                  fc->armed_w ? MF_CHECKED : MF_UNCHECKED);
-   if (SCREEN_WIDTH == 320 && SCREEN_HEIGHT == 200)
+   if (cockpitScale > 0)
       CheckMenuItem(hmenu,CM_SABREC_COCKPIT, MF_BYCOMMAND |
                      fc->cockpit ? MF_CHECKED : MF_UNCHECKED );
    CheckMenuItem(hmenu,CM_SCNTRRN,MF_BYCOMMAND |
@@ -990,7 +990,7 @@ void setFlightMenuItems(BOOL state)
 		EnableMenuItem(hmenu,CM_VIEW_VIRTUAL,fuFlags);
       EnableMenuItem(hmenu,CM_SCNTRRN,fuFlags);
 
-      if (SCREEN_WIDTH == 320 && SCREEN_HEIGHT == 200)
+      if (cockpitScale > 0)
          EnableMenuItem(hmenu,CM_SABREC_COCKPIT,fuFlags);
       else
          EnableMenuItem(hmenu,CM_SABREC_COCKPIT,MF_BYCOMMAND | MF_GRAYED);

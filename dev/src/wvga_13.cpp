@@ -48,6 +48,7 @@ SimFont *g_font = NULL;
 int SCREEN_WIDTH = 320;
 int SCREEN_PITCH = 320;
 int SCREEN_HEIGHT = 200;
+int cockpitScale = 0;
 int MXSCREEN_WIDTH = 320;
 int MXSCREEN_HEIGHT = 200;
 float aspect_ratio = 1.0;
@@ -92,7 +93,14 @@ void wvga_params(int ini_screen_width, int ini_screen_height)
    cliprect.topLeft.y = 0;
    cliprect.botRight.x = MAX_X;
    cliprect.botRight.y = MAX_Y;
-   sim_printf("screen size: %d %d\n",SCREEN_WIDTH,SCREEN_HEIGHT);
+   cockpitScale = 0;
+   if (SCREEN_WIDTH % 320 == 0 && SCREEN_HEIGHT % 200 == 0) {
+      int sx = SCREEN_WIDTH / 320;
+      int sy = SCREEN_HEIGHT / 200;
+      if (sx == sy)
+         cockpitScale = sx;
+   }
+   sim_printf("screen size: %d %d cockpitScale: %d\n",SCREEN_WIDTH,SCREEN_HEIGHT,cockpitScale);
 }
 
 void wvga_init(HWND hw, char *palette_file)

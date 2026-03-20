@@ -65,9 +65,9 @@ Cockpit::Cockpit(unsigned char *byts,
   t_table = new trans_table();
   t_table->trans_color = trans_color;
   t_table->build_runs(cbytes,y_size,x_size);
-  y_clip = SCREEN_HEIGHT - y_size + t_table->ntrans_row;
+  y_clip = SCREEN_HEIGHT - y_size * cockpitScale + t_table->ntrans_row * cockpitScale;
   ipanel = &instrument_panel;
-  cockpit_y = SCREEN_HEIGHT - y_size;
+  cockpit_y = SCREEN_HEIGHT - y_size * cockpitScale;
   cockpit_x = 0;
   ::cockpit_y = cockpit_y;
   ::cockpit_x = cockpit_x;
@@ -91,9 +91,9 @@ Cockpit::Cockpit(char *tmap_id, char *ipath)
   t_table = new trans_table();
   t_table->trans_color = trans_color;
   t_table->build_runs(cbytes,y_size,x_size);
-  y_clip = SCREEN_HEIGHT - y_size + t_table->ntrans_row;
+  y_clip = SCREEN_HEIGHT - y_size * cockpitScale + t_table->ntrans_row * cockpitScale;
   ipanel = &instrument_panel;
-  cockpit_y = SCREEN_HEIGHT - y_size;
+  cockpit_y = SCREEN_HEIGHT - y_size * cockpitScale;
   cockpit_x = 0;
   ::cockpit_y = cockpit_y;
   ::cockpit_x = cockpit_x;
@@ -109,15 +109,19 @@ Cockpit::~Cockpit()
 void Cockpit::draw(Flight &flight)
 {
   unsigned char *buffer_ptr;
-  if (SCREEN_WIDTH==320 && SCREEN_HEIGHT==200)
-  //  if (VGAMODE == G320x200x256)
-    {
-      ipanel->underpaint(flight);
-	  buffer_ptr = lock_xbuff();
-	  if (!buffer_ptr)
-		return;
-      t_table->trans_blit(buffer_ptr,cockpit_x,cockpit_y,NULL,0);
-	  free_xbuff();
-      ipanel->display(flight);
-	}
+  if (cockpitScale < 1)
+    return;
+  ipanel->underpaint(flight);
+  if (cockpitScale == 1) {
+    buffer_ptr = lock_xbuff();
+    if (!buffer_ptr)
+      return;
+    t_table->trans_blit(buffer_ptr, cockpit_x, cockpit_y, NULL, 0);
+    free_xbuff();
+  } else {
+    scale_pixels(cbytes, x_size, y_size, cockpit_x, cockpit_y,
+      x_size * cockpitScale, y_size * cockpitScale,
+      &Port_3D::screen, trans_color);
+  }
+  ipanel->display(flight);
 }

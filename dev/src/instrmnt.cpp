@@ -81,7 +81,8 @@ static unsigned char *b_ptr;
 void ArtHor::init()
 {
   int h_2;
-  height = (int) range;
+  height = (int)(range * cockpitScale);
+  scale *= cockpitScale;
   h_2 = height / 2;
   s[0] = Point(x,y);
   s[1] = Point(x+width,y);
@@ -161,6 +162,7 @@ void ArtHor::display(Flight &)
 }
 void Aileron_I::init()
 {
+  range *= cockpitScale;
   cx = x + (((int)range) / 2);
 }
 void Aileron_I::display(Flight &flt)
@@ -169,12 +171,15 @@ void Aileron_I::display(Flight &flt)
   REAL_TYPE fa = REAL_TYPE(flt.controls.ailerons);
   REAL_TYPE fx = (fr * fa) / 61 ;
   int i = fix2s(fx);
+  int j;
   i++;
-  v_line(cx - i,y,width,color);
+  for (j = 0; j < cockpitScale; j++)
+    v_line(cx - i + j, y, width, color);
 }
 
 void Elevator_I::init()
 {
+  range *= cockpitScale;
   cy = y + (((int)range) / 2);
 }
 
@@ -182,15 +187,16 @@ void Elevator_I::display(Flight &flt)
 {
   REAL_TYPE fr = f2fix(range);
   REAL_TYPE fa = REAL_TYPE(flt.controls.elevators + flt.controls.trim);
-  // 	REAL_TYPE fx = (fr * fa) / 31 ;
   REAL_TYPE fx = (fr * fa) / 61;
   int i = fix2s(fx);
-  //	i;
-  h_line(x,cy + i,width,color);
+  int j;
+  for (j = 0; j < cockpitScale; j++)
+    h_line(x, cy + i + j, width, color);
 }
 
 void Rudder_I::init()
 {
+  range *= cockpitScale;
   cx =  x + (((int) range) / 2);
 }
 
@@ -198,18 +204,24 @@ void Rudder_I::display(Flight &flt)
 {
   REAL_TYPE fr = f2fix(range);
   REAL_TYPE fa = REAL_TYPE(flt.controls.rudder);
-  //	REAL_TYPE fx = (fr * fa) / 31 ;
   REAL_TYPE fx = (fr * fa) / 61;
   int i = fix2s(fx);
+  int j;
   i++;
-  v_line(cx - i,y,width,color);
+  for (j = 0; j < cockpitScale; j++)
+    v_line(cx - i + j, y, width, color);
 }
 
 void LED::on()
 {
   extern unsigned char  led[];
   extern int led_X_size,led_Y_size;
-	trans_blit(x,y,x+led_X_size-1,y+led_Y_size-1,led,b_ptr);
+  if (cockpitScale > 1)
+    scale_pixels(led, led_X_size, led_Y_size, x, y,
+      led_X_size * cockpitScale, led_Y_size * cockpitScale,
+      &Port_3D::screen, 0);
+  else
+    trans_blit(x,y,x+led_X_size-1,y+led_Y_size-1,led,b_ptr);
 }
 
 void Landing_Gear_LED::display(Flight &flt)
@@ -239,14 +251,15 @@ void Dial_Indicator::init()
 void Dial_Indicator::show_dial(float value)
 {
   float angle,fx,fy;
-  int d_x,d_y;
+  int d_x,d_y,j;
   angle = (6.2831853 * value) / range;
   angle -= 1.5707963;
   fx = ((double)(width)) * cos(angle);
   fy = ((double)(width)) * sin(angle);
   d_x = (int)fx;
   d_y = (int)fy;
-  b_linedraw(x,y,x+d_x,y+d_y,color,NULL);
+  for (j = 0; j < cockpitScale; j++)
+    b_linedraw(x+j, y, x+d_x+j, y+d_y, color, NULL);
 }
 
 void Air_Speed_I::display(Flight &flt)
@@ -273,17 +286,19 @@ void Altitude_I::display(Flight &flt)
 void Compass::display(Flight &flt)
 {
   float angle,fx,fy;
-  int d_x,d_y;
+  int d_x,d_y,j;
   angle = flt.state.heading - 1.5707963;
   fx = ((double)width) * cos(angle);
   fy = ((double)width) * sin(angle);
   d_x = (int)fx;
   d_y = (int)fy;
-  b_linedraw(x,y,x+d_x,y+d_y,color,NULL);
+  for (j = 0; j < cockpitScale; j++)
+    b_linedraw(x+j, y, x+d_x+j, y+d_y, color, NULL);
 }
 
 void Throttle_I::init()
 {
+  range *= cockpitScale;
   tmap = map_man->get_map_ptr("throttle");
   if (tmap == NULL)
     printf("missing throttle txr!\n");
@@ -291,15 +306,19 @@ void Throttle_I::init()
 
 void Throttle_I::display(Flight &flt)
 {
-  if (tmap != NULL)
-    {
-      REAL_TYPE rf = ConvertToFix(range);
-      REAL_TYPE tf = ConvertToFix(flt.controls.throttle);
-      REAL_TYPE yf = (tf * rf) / 100;
-      int dy = y - fix2s(yf);
-      trans_blit(x,dy,x+tmap->map_w-1,
-		 dy+tmap->map_h-1,tmap->getBytes(),b_ptr);
-    }
+  if (tmap != NULL) {
+    REAL_TYPE rf = ConvertToFix(range);
+    REAL_TYPE tf = ConvertToFix(flt.controls.throttle);
+    REAL_TYPE yf = (tf * rf) / 100;
+    int dy = y - fix2s(yf);
+    if (cockpitScale > 1)
+      scale_pixels(tmap->getBytes(), tmap->map_w, tmap->map_h, x, dy,
+        tmap->map_w * cockpitScale, tmap->map_h * cockpitScale,
+        &Port_3D::screen, 0);
+    else
+      trans_blit(x, dy, x+tmap->map_w-1,
+        dy+tmap->map_h-1, tmap->getBytes(), b_ptr);
+  }
 }
 
 Instrument_Panel::Instrument_Panel(int max_i)
