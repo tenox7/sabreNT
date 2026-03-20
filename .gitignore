@@ -1,0 +1,16 @@
+dev/src/*.obj
+dev/libzip/*.obj
+dev/libzip/libzip.lib
+dev/Sabrewin.res
+*.pdb
+*.ilk
+*.idb
+*.ncb
+*.opt
+*.plg
+*.GID
+*.log
+*.BAK
+*.bak
+*.sns
+sabre.exe

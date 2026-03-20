@@ -1,12 +1,15 @@
+CFLAGS = /nologo /O2 /DWIN32 /D_WINDOWS /DSABREWIN /c
+ZIPFLAGS = /nologo /O2 /Idev\lib /DWIN32 /c
+
 all: sabre.exe
 
 dev\libzip\libzip.lib: dev\lib\BITS.C dev\lib\CRC.C dev\lib\DEFLATE.C dev\lib\INFLATE.C dev\lib\TREES.C dev\lib\UNC.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\bits.obj dev\lib\BITS.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\crc.obj dev\lib\CRC.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\deflate.obj dev\lib\DEFLATE.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\inflate.obj dev\lib\INFLATE.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\trees.obj dev\lib\TREES.C
-	cl /nologo /O2 /Idev\lib /DWIN32 /c /Fodev\libzip\unc.obj dev\lib\UNC.C
+	cl $(ZIPFLAGS) /Fodev\libzip\bits.obj dev\lib\BITS.C
+	cl $(ZIPFLAGS) /Fodev\libzip\crc.obj dev\lib\CRC.C
+	cl $(ZIPFLAGS) /Fodev\libzip\deflate.obj dev\lib\DEFLATE.C
+	cl $(ZIPFLAGS) /Fodev\libzip\inflate.obj dev\lib\INFLATE.C
+	cl $(ZIPFLAGS) /Fodev\libzip\trees.obj dev\lib\TREES.C
+	cl $(ZIPFLAGS) /Fodev\libzip\unc.obj dev\lib\UNC.C
 	lib /nologo /out:dev\libzip\libzip.lib dev\libzip\bits.obj dev\libzip\crc.obj dev\libzip\deflate.obj dev\libzip\inflate.obj dev\libzip\trees.obj dev\libzip\unc.obj
 
 sabre.exe: \
@@ -118,16 +121,16 @@ winmm.lib
 <<
 
 {dev\src\}.cpp{dev\src\}.obj:
-	cl /nologo /O2 /Idev\src /Idev /DWIN32 /D_WINDOWS /DSABREWIN /c /Fo$@ $<
+	cl $(CFLAGS) /Idev\src /Idev /Fo$@ $<
 
 dev\src\aipid.obj: dev\src\aipid.c
-	cl /nologo /O2 /Idev\src /Idev /DWIN32 /D_WINDOWS /DSABREWIN /c /Fodev\src\aipid.obj dev\src\aipid.c
+	cl $(CFLAGS) /Idev\src /Idev /Fodev\src\aipid.obj dev\src\aipid.c
 
 dev\src\aitime.obj: dev\src\aitime.c
-	cl /nologo /O2 /Idev\src /Idev /DWIN32 /D_WINDOWS /DSABREWIN /c /Fodev\src\aitime.obj dev\src\aitime.c
+	cl $(CFLAGS) /Idev\src /Idev /Fodev\src\aitime.obj dev\src\aitime.c
 
 dev\src\dhlist.obj: dev\src\dhlist.c
-	cl /nologo /O2 /Idev\src /Idev /DWIN32 /D_WINDOWS /DSABREWIN /c /Fodev\src\dhlist.obj dev\src\dhlist.c
+	cl $(CFLAGS) /Idev\src /Idev /Fodev\src\dhlist.obj dev\src\dhlist.c
 
 dev\Sabrewin.res: dev\Sabrewin.rc dev\resource.h
 	rc /r /Idev /fodev\Sabrewin.res dev\Sabrewin.rc
