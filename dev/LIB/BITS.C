@@ -69,7 +69,7 @@
 local void bits_init (FILE *zipfile);
 void bits_send_bits(int value, int length);
 unsigned bits_reverse(unsigned int code, int len);
-void bits_windup(void);
+void bits_windup();
 void bits_copy_block(char *buf, unsigned int len, int header);
 int bits_seekable(void);
 ulg memcompress(char *tgt, ulg tgtsize, char *src, ulg srcsize);

@@ -39,6 +39,7 @@ const char *wVERSION = THISVER;
 #include <time.h>
 #include <stdarg.h>
 #include <signal.h>
+#include <float.h>
 
 #include <direct.h>
 #ifdef USES_DDRAW
@@ -161,9 +162,8 @@ inline void SETGAME(char *flight_path,
    do_random = random_mode;
 }
 
-int WINAPI WinMain ( HANDLE hInstance, HANDLE hPrevInstance,
+int WINAPI WinMain ( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			 LPSTR lpszCmdParam, int nCmdShow )
-
   {
 
 
@@ -176,7 +176,8 @@ int WINAPI WinMain ( HANDLE hInstance, HANDLE hPrevInstance,
 
  // randomize ();
   srand(time(NULL));
-//  signal(SIGFPE, float_error_handler);
+  _controlfp(_MCW_EM, _MCW_EM);
+  signal(SIGFPE, (void (__cdecl *)(int))float_error_handler);
 
   readInitFile();
 #ifdef USES_DDRAW
@@ -219,7 +220,7 @@ int WINAPI WinMain ( HANDLE hInstance, HANDLE hPrevInstance,
   {
 	WndClass.cbClsExtra = 0;
 	WndClass.cbWndExtra = 0;
-	WndClass.hbrBackground = GetStockObject ( GRAY_BRUSH );
+	WndClass.hbrBackground = (HBRUSH)GetStockObject ( GRAY_BRUSH );
 	WndClass.hCursor =  LoadCursor ( NULL, IDC_ARROW );
 	WndClass.hIcon = LoadIcon ( hInstance, NULL );
 	WndClass.hInstance = hInstance;
@@ -792,21 +793,21 @@ void handleMenuCommand(WORD command)
 
 	case CM_ABOUT_SABRE:
 			pauseGame(1);
-			DialogBox(hinstance,MAKEINTRESOURCE(ABOUT_DLG),hWnd,
+			DialogBox((HINSTANCE)hinstance,MAKEINTRESOURCE(ABOUT_DLG),hWnd,
                   (DLGPROC) AboutDialogProc);
 			pauseGame(0);
       break;
 
 #ifndef USES_DDRAW
 	case CM_TEXTURES:
-		DialogBox(hinstance,MAKEINTRESOURCE(TEXTURES_DLG),hWnd,
+		DialogBox((HINSTANCE)hinstance,MAKEINTRESOURCE(TEXTURES_DLG),hWnd,
 					(DLGPROC) TexturesDialogProc);
 		break;
 #endif
 
 	case CM_FLIGHTCUSTM:
 			pauseGame(1);
-			if (DialogBox(hinstance,MAKEINTRESOURCE(MISSION_DLG),hWnd,
+			if (DialogBox((HINSTANCE)hinstance,MAKEINTRESOURCE(MISSION_DLG),hWnd,
 							(DLGPROC) MissionDialogProc))
 			{
 				if (strlen(dlg_flight_file) > 0)
@@ -828,7 +829,7 @@ void handleMenuCommand(WORD command)
 
 	case CM_DEVICES:
 		pauseGame(1);
-		DialogBox(hinstance,MAKEINTRESOURCE(FLTCNTRL_DLG),hWnd,
+		DialogBox((HINSTANCE)hinstance,MAKEINTRESOURCE(FLTCNTRL_DLG),hWnd,
 						(DLGPROC) FlightControlsDialogProc);
 		setDevices();
 		pauseGame(0);
@@ -1165,22 +1166,18 @@ char *fpe_errors[] =
 	"SIGFPE raise()'d"
 };
 
-void __cdecl float_error_handler(int ,int type, int *)
+void __cdecl float_error_handler(int sig, int type, int *p)
 {
-   char buff[512];
-   char bbuff[512];
-
-   wsprintf(buff,"FPE Error type: %d in Routine Key %d",
-            type,routine_key);
-   if (type >= 126 && type <= 140)
-      wsprintf(bbuff,"%s",fpe_errors[type - 126]);
-   else
-      wsprintf(bbuff,"Unknown type");
-  sim_printf("%s\n%s\n",buff,bbuff);
-  ShowWindow(hWnd,SW_HIDE);
-  ShowMouse();
-   ::MessageBox(hWnd,bbuff,buff,MB_OK);
-	exit(1);
+   FILE *fp;
+   fp = fopen("fpe.log","a");
+   if (fp) {
+      fprintf(fp, "FPE type: %d routine_key: %d\n", type, routine_key);
+      fflush(fp);
+      fclose(fp);
+   }
+   _fpreset();
+   _controlfp(_MCW_EM, _MCW_EM);
+   signal(SIGFPE, (void (__cdecl *)(int))float_error_handler);
 }
 
 int GetMaxTextures()

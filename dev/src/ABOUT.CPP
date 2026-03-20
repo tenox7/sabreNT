@@ -65,7 +65,7 @@ HBITMAP hm;
 BITMAP  bm;
 HDC     dc;
 
-   hm = LoadBitmap(hinstance,MAKEINTRESOURCE(ABOUT_BKG));
+   hm = LoadBitmap((HINSTANCE)hinstance,MAKEINTRESOURCE(ABOUT_BKG));
    if (hm != NULL)
    {
       memset(&bm,sizeof(BITMAP),0);
