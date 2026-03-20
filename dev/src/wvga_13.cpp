@@ -98,12 +98,15 @@ void wvga_params(int ini_screen_width, int ini_screen_height)
 void wvga_init(HWND hw, char *palette_file)
 {
    hwnd = hw;
+   sim_printf("wvga_init hw=%p palette=%s\n", hw, palette_file ? palette_file : "NULL");
    if (palette_file)
       wvga_palette(palette_file);
+   sim_printf("wvga_init calling dib_sect.init\n");
    dib_sect.init(SCREEN_WIDTH,SCREEN_HEIGHT,rgb_colors,hwnd);
    buffer_ptr = dib_sect.getBits();
    xbuffer = buffer_ptr;
    screen_ptr = buffer_ptr;
+   sim_printf("wvga_init done buffer=%p\n", buffer_ptr);
 }
 
 void wvga_release(void)
@@ -113,7 +116,9 @@ void wvga_release(void)
 void wvga_palette(char *palette_file)
 {
    PALETTEENTRY system_palette[256];
+   sim_printf("wvga_palette hwnd=%p\n", hwnd);
    HDC dc = GetDC(hwnd);
+   sim_printf("wvga_palette dc=%p\n", dc);
    UINT r = GetSystemPaletteEntries(dc,0,256,system_palette);
    if (r)
    {

@@ -23,6 +23,12 @@ typedef unsigned char byte;
 typedef unsigned int word;
 typedef unsigned long dword,d_word;
 typedef int Boolean;
+#ifndef true
+#define true 1
+#endif
+#ifndef false
+#define false 0
+#endif
 #ifdef SABREWIN
 #else
 #define __cdecl 

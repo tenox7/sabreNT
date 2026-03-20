@@ -244,7 +244,9 @@ int WINAPI WinMain ( HANDLE hInstance, HANDLE hPrevInstance,
 								hInstance,               // Program Instance
 								NULL );                  // Parameters
 #endif
+  sim_printf("CreateWindow done\n");
   ShowWindow ( hWnd, nCmdShow );
+  sim_printf("ShowWindow done\n");
    initGraphics();	
   hmenu = GetMenu(hWnd);
 	if (!editTextures)
@@ -367,12 +369,16 @@ void initGraphics()
 
 void initJoystick()
 {
+#ifdef _M_IX86
 	joystick0 = new Joystick(0);
 	if (!joystick0->IsAvailable())
 	{
 		delete joystick0;
 		joystick0 = NULL;
 	}
+#else
+	joystick0 = NULL;
+#endif
 	if (joystick0 != NULL)
 	{
 		wc_joystick_avail = 1;
