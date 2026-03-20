@@ -1,0 +1,298 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU_1 MENU DISCARDABLE 
+BEGIN
+    POPUP "&Flights"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "&Custom Mission ...",         CM_FLIGHTCUSTM
+        MENUITEM SEPARATOR
+        MENUITEM "&New Game",                   CM_NEWGAME
+        MENUITEM "E&xit",                       CM_EXIT
+    END
+    POPUP "&Demos"
+    BEGIN
+        MENUITEM "&Furball",                    CM_DEMFURBALL
+        MENUITEM "&Melee",                      CM_DEMOSMELEE
+        MENUITEM "&Pistons",                    CM_DEMOPVY
+        MENUITEM "F&84Scrap",                   CM_DEMOSFSCRAP
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&0 Virtual",                  CM_VIEW_VIRTUAL
+        MENUITEM "&1 Front",                    CM_VIEW_FRONT
+        MENUITEM "&2 Left",                     CM_VIEW_LEFT
+        MENUITEM "&3 Right",                    CM_VIEW_RIGHT
+        MENUITEM "&4 Back",                     CM_VIEW_BACK
+        MENUITEM "&5 Top",                      CM_VIEW_TOP
+        MENUITEM "&6 Outside",                  CM_VIEW_OUTSIDE
+        MENUITEM "&7 Track",                    CM_VIEW_COMBAT_TRACK
+        MENUITEM "&& Padlock",                  CM_VIEW_PADLOCK
+        MENUITEM "&8 Target Track",             CM_VIEW_COMBAT_TRACK_II
+        MENUITEM "&9 FlyBy",                    CM_VIEW_FLYBY
+    END
+    POPUP "&Controls"
+    BEGIN
+        MENUITEM "&B Speed Brakes",             CM_CONTROLSBRAKES
+        MENUITEM "&W Wheel Brakes",             CM_CONTROLWBRAKES
+        MENUITEM "&G Landing Gear",             CM_CONTROLS_GEAR
+        MENUITEM "&* Full Throttle",            CM_CONTROLS_FULL_THROTTLE
+        MENUITEM "&/ Cut Throttle",             CM_CONTROLS0THROTTLE
+        MENUITEM "&X Arm Weapon",               CM_SABREGUNS
+        MENUITEM "Next Weapon",                 CM_NEXT_WEAPON
+        MENUITEM "&A Autopilot",                CM_SABREAUTO
+        MENUITEM "&Pause",                      CM_SABREP_PAUSE
+        MENUITEM "Next Aircraft",               CM_SABRENEXT_AIRCRAFT
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&C Cockpit",                  CM_SABREC_COCKPIT
+        MENUITEM "&H Hud",                      CM_HUD
+        MENUITEM "&V Flight Path",              CM_FLIGHTPATH
+        MENUITEM "&S Airframe",                 CM_AIRFRAME
+        MENUITEM "Clouds",                      CM_SCNCLOUDS
+        MENUITEM "Terrain",                     CM_SCNTRRN
+        MENUITEM "Sound",                       CM_SOUND
+        MENUITEM SEPARATOR
+        MENUITEM "Control Devices ...",         CM_DEVICES
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "&Help",                       CM_SABRE_HELP
+        MENUITEM "&About SABRE",                CM_ABOUT_SABRE
+        MENUITEM "Textures",                    CM_TEXTURES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUT_DLG DIALOGEX 91, 69, 269, 175
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "About SABRE"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,115,121,38,13
+    LTEXT           "",IDSTATIC_VERSION,0,123,110,11,0,WS_EX_TRANSPARENT
+    CTEXT           "Contributions by:  Karl Larocca  Antti Barck  David Mansfield  Pierre de Mouveaux\n Web Site Hosted by: Communication Billing Technologies\nUnsolicited Comments by: My Father",
+                    IDSTATIC_CREDITS,0,150,269,26
+END
+
+MISSION_DLG DIALOG DISCARDABLE  29, 48, 207, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "SABRE Custom Mission"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,148,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,148,24,50,14
+    EDITTEXT        IDC_EDIT1,11,25,118,12
+    LTEXT           "Flight File",-1,11,10,115,8
+    CONTROL         "Randomize Positions",IDC_RADIOBUTTON1,"Button",
+                    BS_AUTOCHECKBOX,11,80,83,12
+    EDITTEXT        IDC_EDIT2,11,60,118,12
+    LTEXT           "Ground Unit File",-1,11,45,115,8
+    CONTROL         "Demo Mode",IDC_RADIOBUTTON2,"Button",BS_AUTOCHECKBOX,97,
+                    81,95,12
+END
+
+FLTCNTRL_DLG DIALOG DISCARDABLE  0, 0, 275, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Flight Controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,84,76,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,142,76,50,14
+    RADIOBUTTON     "Joystick",IDC_YDJOY,15,22,60,10,WS_TABSTOP
+    RADIOBUTTON     "Mouse",IDC_YDMOU,15,37,55,10,WS_TABSTOP
+    RADIOBUTTON     "Keyboard",IDC_YDKEY,15,52,64,10,WS_TABSTOP
+    GROUPBOX        "Yoke Device",IDC_STATIC,7,6,86,64
+    RADIOBUTTON     "Rudder Pedals",IDC_RDJOY,188,22,60,10,WS_TABSTOP
+    RADIOBUTTON     "Keyboard",IDC_RDKEY,188,37,55,10,WS_TABSTOP
+    GROUPBOX        "Rudder Device",IDC_STATIC,180,6,86,64
+    RADIOBUTTON     "Throttle Wheel",IDC_TDJOY,102,22,60,10,WS_TABSTOP
+    RADIOBUTTON     "Keyboard",IDC_TDKEY,102,37,55,10,WS_TABSTOP
+    GROUPBOX        "Throttle Device",IDC_STATIC,94,6,86,64
+END
+
+TEXTURES_DLG DIALOG DISCARDABLE  91, 69, 211, 156
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Textures View"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,150,140,38,13
+    PUSHBUTTON      "Next",IDC_TXTR_NEXT,24,140,38,13
+    PUSHBUTTON      "Prev",IDC_TXTR_PREV,65,140,38,13
+    PUSHBUTTON      "To BMP",IDC_TXTR_FILE,106,140,38,13
+    LTEXT           "",IDC_TXTR_INFO,25,119,162,12,WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+ABOUT_BKG               BITMAP  MOVEABLE PURE   "sabre001.bmp"
+BITMAP_2                BITMAP  MOVEABLE PURE   "sbrsplsh.bmp"
+BITMAP_3                BITMAP  MOVEABLE PURE   "sbrico.bmp"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VERSIONINFO_1 VERSIONINFO
+ FILEVERSION 1,0,2,3
+ PRODUCTVERSION 0,2,4,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "\0"
+            VALUE "FileVersion", "0.2.4.w\0"
+            VALUE "InternalName", "Sabre Fighter Plane Simulator\0"
+            VALUE "LegalCopyright", "Copyright © Dan Hammer 1998\0"
+            VALUE "OriginalFilename", "sabre.exe\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "0, 2, 4, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "sabre.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    FLTCNTRL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    TEXTURES_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 208
+        BOTTOMMARGIN, 153
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING1             "copyright (c) 1997,1998 by Dan Hammer"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

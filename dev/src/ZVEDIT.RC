@@ -1,0 +1,47 @@
+/****************************************************************************
+
+
+ZVEDIT.RC
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#include "zvedtwin.rh"
+
+
+MENU_1 MENU 
+{
+ POPUP "File"
+ {
+  MENUITEM "Exit", CM_EXIT
+ }
+ POPUP "Stuff"
+ {
+  MENUITEM "Edit Poly", CM_EDIT_POLY
+ }
+}
+
+
+POLY_DLG DIALOG 26, 23, 145, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Poly Draw"
+FONT 8, "MS Sans Serif"
+{
+ DEFPUSHBUTTON "OK", IDOK, 118, 143, 25, 14
+ PUSHBUTTON "Cancel", IDCANCEL, 117, 160, 25, 14
+ EDITTEXT IDC_EDITX, 20, 146, 24, 12, WS_BORDER
+ EDITTEXT IDC_EDITY, 20, 160, 24, 12, WS_BORDER
+ PUSHBUTTON "v", IDC_UP, 47, 146, 12, 11
+ PUSHBUTTON "^", IDC_DOWN, 47, 160, 12, 11
+ PUSHBUTTON ">", IDC_RIGHT, 62, 146, 12, 11
+ PUSHBUTTON "<", IDC_LEFT, 62, 160, 12, 11
+ PUSHBUTTON "*", IDC_SEL, 82, 145, 14, 14
+ PUSHBUTTON "!", IDC_INS, 82, 160, 14, 14
+ PUSHBUTTON "X", IDC_DEL, 99, 151, 14, 14
+ CTEXT "Y", -1, 5, 161, 14, 8
+ CTEXT "X", -1, 5, 147, 14, 8
+
+}
+

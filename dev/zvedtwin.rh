@@ -1,0 +1,7 @@
+#ifndef __zvedtwin_rh
+#define __zvedtwin_rh
+
+#define MENU_1	1
+#define CM_EXIT	102
+
+#endif

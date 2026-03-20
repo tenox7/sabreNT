@@ -1,0 +1,55 @@
+WHATSNEW
+SABRE Fighter-Plane Simulator
+Version 0.2.2
+Windows NT/95 port
+
+For those of you who have previous versions of
+SABRE, here's are brief rundown of the latest
+and greatest.
+
+First of all, thanks to A. Barck for contributing
+some properly done configure and Make files,
+and a nice script using dialog to run missions,
+demos and view documentation. Thanks to him, you
+should find building SABRE much easier ... check out
+his optimization suggestions in the INSTALL file.
+
+Changes from Versions 0.1.1, 0.1.2
+__________________________________
+The most notable difference is ... the ground varies in
+height! There are hills, and valleys, and roads, and even
+farm-fields (or so they can be imagined as). 
+
+Better-looking smoke trails from destroyed planes.
+
+Texture-mapped planes now look a tad more acceptable.
+
+New plane - the Yak-9.
+
+Changes from Version 0.2.0
+__________________________
+Properly done configuration and make files. A nicely done
+front-end script, RunSabre.
+
+You should find SABRE to run a good 15% faster. I discovered some
+misjudgements in terms of evaluating objects for inclusion in
+the drawing que (oh, to be honest, they were more like dumb
+mistakes), and once corrected,  for myself and others there was
+a definite improvement in frame-rate. (You can see the frame-rate
+in the front cockpit view via the '|' key).
+
+New plane - The F-84 Thunderjet!
+
+Cleaned up some of the pilot's lingo. Embarassingly, they were
+saying things like "Kill on MiG-15 @ Angels 12567", when the term
+"Angels" refers to feet in thousands, so they should have said
+(and will say now) " ... Angels 12".
+
+
+Changes from Version 0.2.1
+__________________________
+Ported to Windows NT/95
+
+
+
+ 

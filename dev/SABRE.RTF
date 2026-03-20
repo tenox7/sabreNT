@@ -1,0 +1,789 @@
+{\rtf1\ansi \deff0{\fonttbl{\f0\fswiss Helv;}{\f1\fmodern Courier;}{\f2\fmodern Pica;}}
+{
+${\footnote $ Introduction}
+{\b \fs24 Introduction}\plain\par\par
+#{\footnote # loc1}
+K{\footnote K Introduction}
+\pard \plain \qj \fs20 \f0 Thank you for trying out SABRE Fighter Plane Simulator, 
+an on-going game project for Linux and Windows NT/95 developed under 
+the {\uldb GNU Public License}{\v loc23} as a labor 
+of love by flight-simulation enthusiasts.
+\par
+\par
+{\b Quick Tips}
+\par
+If you've just downloaded and run SABRE, you are currently in {\uldb Demo Mode}{\v loc21}. 
+It is March, 1953, and in the frigid skies over Korea, American F-86 SabreJets, F-84 
+ThunderJets and F-51 Mustangs are engaged with North Korean MiG-15s and Yak-9s 
+in a whirling "furball". From positions on the ground 37-mm AAA fire adds to the 
+danger. The demo switches viewpoint from plane to plane, giving you a 
+"God's-Eye" view of the action. 
+\par
+\par
+To fly yourself, choose a selection from the 
+{\uldb Flights}{\v loc22} menu. When you start a flight, the mouse pointer will 
+dissapear. Your mouse is now functioning as the "stick", and by moving it left,
+right, forwards or backwards you make the plane bank left, bank right, nose down 
+or nose up. The stick position is indicated by a green circle which moves around 
+near center of the screen. See {\uldb HUD Diagram}{\v loc51}. 
+\par
+\par
+Clicking on the RIGHT mouse button will PAUSE the game, and return the mouse pointer 
+to allow you to select a menu item. If your guns are armed (as indicated by the presence 
+of the gun pipper, a green circle with a dot), clicking on the LEFT mouse button will 
+fire them.
+\par
+\par
+You can exit the game at any time by hitting {\b\f1 Q} or {\b\f1 q} or {\b\f1<ESC>},
+or by selecting {\bExit} from the {\uldb Flights}{\v loc22} menu. 
+\par
+\par
+Send inquiries and bug reports to {\b dan@cobite.com}.
+\par
+\par
+Check out the SABRE Web Site:
+\par
+{ \b sabre.cobite.com }
+\par
+for latest patches and documentation
+\par
+\par
+\pard
+\par{\uldb Keys Reference}{\v loc20}
+\par{\uldb HUD Diagram}{\v loc51}
+\par{\uldb Cockpit Diagram}{\v loc50}
+\par{\uldb Demo Mode}{\v loc21}
+\par{\uldb Flights}{\v loc22}
+\par{\uldb NEW! Air-To-Ground Missions}{\v loc100}
+\par{\uldb Window Size}{\v loc30}
+\par{\uldb Target Track}{\v loc61}
+\par{\uldb Target Track II}{\v loc62}
+\par{\uldb Jumping from Plane to Plane}{\v loc80}
+\par{\uldb GNU Public License}{\v loc23}
+}
+{\plain \page}
+
+{
+${\footnote $ Autopilot}
+K{\footnote K Autopilot}
+{\b \fs24 Autopilot}\plain\par\par
+#{\footnote # loc24}
+\pard \plain \qj \fs20 \f0 
+Choosing {\b Autopilot} from the {\b Controls} Menu, or pressing {\b \f1 A} engages 
+or disengages the Autopilot. In SABRE, the Autopilot does a lot more than usual. You 
+can think of him or her has your copilot, ready to take over at any time if you get 
+weary of battle. When you invoke the Autopilot, the same logic used for the computer-
+controlled planes will now govern your plane (for better or worse). 
+} {\plain \page}
+
+
+{
+K{\footnote K Flights}
+${\footnote $ Flights}
+{\b \fs24 Flights}\plain\par\par
+#{\footnote # loc22}
+\pard \plain \qj \fs20 \f0
+\par
+The following missions are available from the {\b Flights} Menu: 
+\par
+\par
+{\b Just Fly}
+\par
+Just fly around. No one will bother you! And if you feel like taking a shot at 
+something, go ahead ... maybe it will blow up!
+\par
+\par
+{\b Takeoff}
+\par
+Takeoff from the runway. Use the {\b *} for full throttle, {\b W} to release 
+your wheel brakes. When your airspeed reaches 160 kts, pull back gently and 
+rise!
+\par
+\par
+{\b Shoot1}
+\par
+Puts you on the six of a rather clueless MiG-15. Get the pipper (see {\uldb HUD Diagram}{\v loc51}) 
+on the Lead Box and pull the trigger!
+\par
+\par
+{\b Shoot2}
+\par
+Same setup as Shoot1 above, except now the MiG will break to your left.
+\par
+\par
+{\b Shoot3}
+\par
+Same setup again, except now the MiG will "jink" back and forth
+\par
+\par
+{\b Dogfight}
+\par
+This is it, buddy! Your're one-on-one against a hot MiG-15 pilot, who wants you to
+die for your country. The setup is random, he might be in front of you, or behind you. 
+Use the {\uldb Target Track}{\v loc61} view to quickly find out where he is.
+\par
+\par
+{\b Melee}
+\par
+You're part of a 5-plane formation of SabreJets heading straight into MiG Alley. You'll 
+hear your wingman engage a flight of MiGs up ahead. Use the {\uldb Target Track II}{\v loc62} 
+view, along with the {\b <ENTER>} key, to pick out a target in the fray. You'll need to 
+cycle through your wingmen before getting to the MiGs, which (if you don't know) are the 
+planes with the big red stars on them. Then use {\uldb Target Track}{\v loc61} 
+to steer your way to him. Do your part to help your buddies see this one through!
+\par
+\par
+{\b Furball}
+\par
+Holey Smokes! What a mess ... we've got SabreJets, ThunderJets, Mustangs, MiGs and Yaks all 
+over the place! Again, use that {\uldb Target Track II}{\v loc62} and the {\uldb Target Track}{\v loc61} 
+views to locate and head towards an enemy plane. Check your six!
+\par
+\par
+{\b Mig Jump}
+\par
+And now, for the other point of view. You are patrolling in your MiG-15, with your 
+loyal Wing Comrade, Commander Jing, when you  
+spot a flight of three F-51 Mustangs below you. Use "zoom and boom" tactics to defeat 
+the less powerful American planes. 
+\par
+\par
+{\b Yak Attack!}
+\par
+See how your F-51 Mustang, the greatest American piston-engine fighter ever made, 
+measures up against the Russian Yak-09, also of World War II vintage.
+}
+\par
+\par 
+{\b ThunderJets}
+\par
+The F84 ThunderJet is a fine plane, but the MiG-15 outclasses it in nearly every 
+respect. You and your two wingmen will need to use your superior skill and training 
+to defeat a flight of MiGs heading your way!      
+\par
+\par
+{\b NEW! Ground Attack I-III}
+\par 
+New with Version 0.2.3, three intense ground attack missions pitting you, armed 
+with HVAR rockets and M43 500lb bombs, against rather excitable ground units who 
+will send 60mm AAA fire your way. See {\uldb Air-To-Ground Missions }{\v loc100} 
+for some pointers. 
+\par
+\par
+
+{\plain \page}
+
+{
+${\footnote $ Air-To-Ground Missions }
+K{\footnote K Air-To-Ground Missions }
+#{\footnote # loc100}
+{\b \fs24 Air-To-Ground Missions}\par\par
+ \pard \plain \f1 \fs10
+The "Ground Attack" scenarios introduce air-to-ground ordinance into SABRE. 
+Armed with HVAR high-velocity rockets, M43 500lb bombs, and 
+M64 1000lb bombs, you will attack ground units who, not  
+surprisingly, will retaliate with deadly 60mm anti-aircraft fire. 
+Also, a few MiGs may drop by to say hello. 
+\par
+\par
+Air-to-ground ordinance is also available in the "fly" mission, 
+and you may want to develop your bombing and strafing skills by attacking 
+the red pyramids at "Target Range Omega", without fear of 
+retaliation. In the "gru" missions, the red pyramids will be 
+replaced by the ground units. 
+\par
+\par
+To select your air-to-ground ordinance, use the 'N' key. The 
+type of ordinance selected will appear in the lower left of 
+your hud ... "HVAR" for rockets, "M43" for 500lb bombs, and 
+"M64" for 1000lb bombs. 
+\par
+\par 
+All of the missions have you pointed towards a dark circular 
+area, "Target Range Omega", where you will find the ground units 
+(but not quite before they notice you!). The ground units consist 
+of a column of trucks and AAA vehicles. The AAA vehicles, for now, 
+use the same shape data as the trucks, so they, well, they look 
+like trucks. But they dont quack like a truck, nor walk like a 
+truck, so believe me, they aint trucks!  
+\par
+\par
+If you get turned around and confused, your 
+"waypoint indicators", horizontal and vertical green lines, 
+can help you get back on track. 
+In Ground Attack II & III, you are also being tracked by MiGs. To select 
+them for targeting, press the <ENTER> key, however, the waypoint 
+indicators will no longer guide you to the ground targets. 
+In II, you should have plenty of time to make a few passes 
+before having to deal with the MiG, in III, well, you'll see ... 
+\par 
+\par
+Aiming 
+\par 
+------ 
+\par
+Aiming your air-to-ground ordinance is purely a matter of  
+feel. The sight is fixed on the center of your hud for both 
+rockets and bombs, no computed "cueing" is given. Bombs are 
+particularly difficult to aim accurately. You'll have to drop 
+a few at a consistent dive angle and speed to get a sense of 
+where you want the target to be on release. I wish I could 
+give you some better advice, but, hey, I haven't figured out 
+how to drop the darn things on target yet either! 
+\par 
+\par
+Rockets are a little easier to aim, plus they look kind of 
+neat. You also get to see where they hit, which brings up 
+another issue ... 
+\par
+\par
+Bomb Damage Assesment 
+\par
+---------------------
+\par
+The other thing about the bombs is desiring to see if, 
+after dodging through MiGs and flak at great risk, you 
+managed to hit anything. However, doing so often involves 
+floundering around and making yourself a sitting duck for 
+AAA fire, or stalling, or just plowing into the ground. 
+\par
+\par 
+This issue will be resolved in the next update by providing 
+a "weapon viewpoint" so you can, ala Dr. StrangeLove, 
+ride your bomb right into the ground! Meanwhile, try a steep 
+climb after release and using the back view ('4' key) to eyeball 
+the results. 
+\par
+\par
+Hints
+\par 
+----- 
+\par
+The ground units are moving in columns perpendicular to you. 
+To get the most out of your ordinance, you want to swing around 
+and approach them head on. 
+\par
+\par
+Stay high and fast. Release your weapons no lower than 4000 feet 
+AGL and quickly pull away. If you get low and slow over those 
+60s, you are one dead pilot. 
+\par
+\par
+In "Ground Attack I", you will be flying an F-84 ThunderJet, which did most 
+of the ground attack work in the later stages of the Korean War. 
+Be careful not to stall this birdy ... I've added a spin factor 
+to it's flight model which makes stalling particularly dangerous .
+\par
+} {\plain \page}
+
+{
+${\footnote $ Demo Mode}
+K{\footnote K Demo Mode}
+#{\footnote # loc21}
+{\b \fs24 Demo Mode}\par\par
+\plain \qj \fs20 \f0 In Demo Mode, you have a "God's-Eye" view of the battle. 
+The simulation automatically switches the view-point from plane to plane, 
+attempting to show you the most interesting events occurring. 
+Demo Mode is a good way to observe how the computer-controlled 
+pilots maneuver and shoot (not particularly well, as of now.) 
+If you get excited enough to join in, hit {\b\f1 A} or select 
+{\uldb Autopilot}{\v loc24} 
+from the Controls Menu at any point, 
+and you will be put in control of the selected aircraft.
+} {\plain \page}
+
+
+{
+${\footnote $ Window Size}
+K{\footnote K Window Size}
+#{\footnote # loc30}
+{\b \fs24 Changing the Window Size}\par\par
+\plain \qj \fs20 \f0 
+\par
+You can change the size of the window you are running SABRE 
+in by simply dragging on the bottom right corner, as you would 
+any other window. The one caveat is that the larger you make the 
+window, the slower the game will run, as more pixels have to be generated. 
+Additionally, the cockpit graphic will only appear when the window is 
+320x200 pixels. 
+} {\plain \page}
+
+{
+
+${\footnote $ Keys Reference}
+K{\footnote K Keys Reference}
+#{\footnote # loc20}
+{\b \fs24 Keys Reference}
+\par
+\pard 
+\plain \qj \fs20 \f0 Below is a key-reference.
+\par 
+Many of the functions are available 
+from the pull-down menus, but of course, in the heat of battle 
+it is more convenient to invoke them via a key-stroke. 
+\par
+\par
+Unless otherwise indicated, typing an lowercase letter will issue the 
+same command as the uppercase letter shown.
+\par
+\par
+
+{
+ \pard \plain \f1 \fs10
+{\b \f0 \fs20 Eject! Eject! Eject!}
+\par
+{\b Q} or {\b <ESC>} ....... Exits the game immediately (use when boss approaches)
+\par
+\par
+{\b \f0 \fs20 Flight Control Keys }
+\par
+{\b *} ................ 100% throttle
+\par
+{\b /} ................ 0% throttle
+\par
+{\b +} ................ increase throttle
+\par
+{\b -} ................ decrease throttle
+\par
+{\b W} ................ release/engage wheel brakes
+\par
+{\b B} ................ release/engage speed brakes
+\par
+{\b G} ................ raise/lower landing gear
+\par
+{\b A} ................ engage/disengage {\uldb Autopilot}{\v loc24}
+\par
+{\b J} ................ left rudder
+\par
+{\b L} ................ right rudder
+\par
+{\b K} ................ center rudder
+\par
+{\b f} ................ flaps down
+\par
+{\b F} ................ flaps up
+\par
+{\b t} ................ trim up
+\par
+{\b T} ................ trim down
+\par
+{\b <ctl>t} .......... neutral trim
+\par
+\par
+{\b \f0 \fs20 View Keys}
+\par
+{\b 1} ................ front
+\par
+{\b 2} ................ left
+\par
+{\b 3} ................ right
+\par
+{\b 4} ................ back
+\par
+Combine above views with {\b SHIFT} to tilt up or {\b CTRL} to tilt down
+\par
+{\b 5} ................ top
+\par
+{\b 0} ................ virtual
+\par
+{\b 6} ................ {\uldb Outside View}{\v loc60}
+\par
+{\b 7} ................ {\uldb Target Track}{\v loc61}
+\par
+{\b 8} ................ {\uldb Target Track II}{\v loc62}
+\par
+{\b 9} ................ flyby
+\par
+{\b &} ................ padlock
+\par 
+For virtual and Outside views:
+\par
+{\b F2} ............... rotate left
+\par
+{\b F3} ............... rotate right
+\par
+{\b F4} ............... rotate down
+\par
+{\b F5} ............... rotate up
+\par
+{\b F6} ............... snap to front
+\par
+Numeric keypad views (NumLock on)
+\par
+{\b NUMPAD8} ......... front
+\par
+{\b NUMPAD7} ......... front left
+\par
+{\b NUMPAD9} ......... front right
+\par
+{\b NUMPAD4} ......... left
+\par
+{\b NUMPAD6} ......... right
+\par
+{\b NUMPAD2} ......... rear
+\par
+{\b NUMPAD1} ......... rear left
+\par
+{\b NUMPAD3} ......... rear right
+\par
+Combine above keys with {\b NUMPAD5} to tilt up, {\b NUMPAD0} to tilt down
+\par
+\par
+{\b \f0 \fs20 Cockpit and HUD}
+\par
+{\b C} ................ Show/hide {\uldb Cockpit Bitmap and Instruments}{\v loc50}
+\par
+{\b H} ................ Show/hide {\uldb Heads Up Display (HUD)}{\v loc51}
+\par
+{\b S} ................ Show/hide aircraft externals
+\par
+{\b V} ................ Show/hide flight-path indicator
+\par
+{\b <ctrl>Z} ......... Show/hide frame rate display
+\par 
+\par
+{\b \f0 \fs20 Weapons}
+\par
+{\b X} ................ Arm/disarm selected weapon
+\par
+{\b <BACKSPACE>} ..... Select next weapon
+\par
+{\b <SPACEBAR>} ...... Fire selected weapon
+\par
+\par
+{\b \f0 \fs20 Miscellaneous}
+\par
+{\b <ENTER>} .......... Select Next Target {\uldb See Target Track}{\v loc61}
+\par
+{\b <TAB>} ............ {\uldb Jump To Next Plane}{\v loc80}
+\par
+{\b F11} .............. Toggle texture-mapped landscape
+\par
+{\b F12} .............. Toggle clouds
+\par
+{\b <ctrl>F} .......... Apple II compatability mode.
+\par 
+                    (Real men fight with wireframes)
+
+\par
+}
+}
+{\plain \page}
+
+{
+K{\footnote K Cockpit Bitmap and Instruments}
+${\footnote $ Cockpit Bitmap and Instruments}
+#{\footnote # loc50}
+{\b \fs20 Cockpit Bitmap and Instruments}
+\par
+\pard \plain \qj \fs20 \f0
+The cockpit bitmap is only visible when running SABRE in a 320x200 
+sized window.
+\par 
+\par
+\{bmc hlpcpk.bmp\}
+} 
+{\plain \page}
+
+{
+K{\footnote K Heads Up Display (HUD)}
+${\footnote $ Heads Up Display (HUD)}
+#{\footnote # loc51}
+{\b \fs20 Heads Up Display (HUD)}
+\pard \plain \qj \fs20 \f0
+\par
+\{bmc hlphud.bmp\}
+\par 
+} 
+{\plain \page}
+
+{
+K{\footnote K Jumping From Plane to Plane}
+${\footnote $ Jumping From Plane to Plane}
+#{\footnote # loc80}
+{\b \fs24 Jumping from Plane to Plane}
+\pard \plain \qj \fs20 \f0
+\par
+Pressing {\b <TAB>} or selecting {\b Next Aircraft} from the Special 
+Menu will miraculously transport you into the cockpit of the next available 
+aircraft (whether friend or foe). It's a good idea to first engage your own 
+Autopilot {\b A} key before leaving. To take control, disengage the Autopilot 
+and fly away. If you get bored or shot up, just skip to another 
+plane. You can't go wrong!
+} 
+{\plain \page}
+
+{
+${\footnote $ Outside View}
+K{\footnote K Outside View}
+{\b \fs24 Outside View}\plain\par\par
+#{\footnote # loc60}
+\pard \plain \qj \fs20 \f0 
+\{bmc hlpoutsv.bmp\}
+\par
+\par
+Pressing the {\b 6} key or selecting {\b Outside} from the 
+View Menu gives you a view outside your airplane. The following 
+keys can be used to alter this view: 
+{
+ \pard \plain \f1 \fs10
+\par
+{\b i} ................ Decrease distance
+\par
+{\b u} ................ Increase distance
+\par
+{\b y} ................ horiziontal clockwise rotation
+\par
+{\b m} ................ horizontal counter-clockwise rotation
+\par
+{\b z} ................ vertical clockwise rotation
+\par
+{\b o} ................ vertical counter-clockwise rotation
+}
+
+} 
+{\plain \page}
+
+{
+K{\footnote K Target Track}
+${\footnote $ Target Track}
+#{\footnote # loc61}
+{\b \fs24 Target Track}
+\pard \plain \qj \fs20 \f0
+\par 
+\{bmc hlptgtv.bmp\}
+\par
+Pressing the {\b 7} key or selecting {\b Target Track} from the View 
+Menu gives you a most useful view in which the target aircraft you selected 
+via the {\b <ENTER>} is displayed in the center of the screen, along 
+with your airplane so you can quickly see your relationship to it. 
+} 
+{\plain \page}
+
+{
+K{\footnote K Target Track II}
+${\footnote $ Target Track II}
+#{\footnote # loc62}
+{\b \fs24 Target Track II}
+\pard \plain \qj \fs20 \f0 
+\par
+\{bmc hlptgtv2.bmp\}
+\par
+Pressing the {\b 8} key or selecting {\b Target Track II} from the View 
+Menu gives you a look at your opponent's plane, with your plane  
+in the center of the screen. This view is useful for selecting targets in a 
+multi-bogey situation. Use the {\b <ENTER>} key to cycle through the various 
+aircraft involved in the fight, selecting one which you wish to engage. 
+}
+{\plain \page}
+
+{
+${\footnote $ GNU Public License}
+{\b \f0 \fs24 GNU Public License}\plain\par\par
+#{\footnote # loc23}
+{\par \ql \f1 \fs9
+		    GNU GENERAL PUBLIC LICENSE
+\par
+		     Version 1, February 1989
+\par
+ Copyright (C) 1989 Free Software Foundation, Inc.
+\par
+		    675 Mass Ave, Cambridge, MA 02139, USA
+\par
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+\par
+The Free Software Foundation has exempted Bash from the requirement of
+Paragraph 2c of the General Public License.  This is to say, there is
+no requirement for Bash to print a notice when it is started
+interactively in the usual way.  We made this exception because users
+and standards expect shells not to print such messages.  This
+exception applies to any program that serves as a shell and that is
+based primarily on Bash as opposed to other GNU software.
+\par
+			    Preamble
+\par
+  The license agreements of most software companies try to keep users
+at the mercy of those companies.  By contrast, our General Public
+License is intended to guarantee your freedom to share and change free
+software--to make sure the software is free for all its users.  The
+General Public License applies to the Free Software Foundation's
+software and to any other program whose authors commit to using it.
+You can use it for your programs, too.
+\par
+  When we speak of free software, we are referring to freedom, not
+price.  Specifically, the General Public License is designed to make
+sure that you have the freedom to give away or sell copies of free
+software, that you receive source code or can get it if you want it,
+that you can change the software or use pieces of it in new free
+programs; and that you know you can do these things.
+\par
+  To protect your rights, we need to make restrictions that forbid
+anyone to deny you these rights or to ask you to surrender the rights.
+These restrictions translate to certain responsibilities for you if you
+distribute copies of the software, or if you modify it.
+\par
+  For example, if you distribute copies of a such a program, whether
+gratis or for a fee, you must give the recipients all the rights that
+you have.  You must make sure that they, too, receive or can get the
+source code.  And you must tell them their rights.
+\par
+  We protect your rights with two steps: (1) copyright the software, and
+(2) offer you this license which gives you legal permission to copy,
+distribute and/or modify the software.
+\par
+  Also, for each author's protection and ours, we want to make certain
+that everyone understands that there is no warranty for this free
+software.  If the software is modified by someone else and passed on, we
+want its recipients to know that what they have is not the original, so
+that any problems introduced by others will not reflect on the original
+authors' reputations.
+\par
+  The precise terms and conditions for copying, distribution and
+modification follow.
+\par
+		    GNU GENERAL PUBLIC LICENSE
+\par
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+\par
+  0. This License Agreement applies to any program or other work which
+contains a notice placed by the copyright holder saying it may be
+distributed under the terms of this General Public License.  The
+"Program", below, refers to any such program or work, and a "work based
+on the Program" means either the Program or any work containing the
+Program or a portion of it, either verbatim or with modifications.  Each
+licensee is addressed as "you".
+\par
+  1. You may copy and distribute verbatim copies of the Program's source
+code as you receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice and
+disclaimer of warranty; keep intact all the notices that refer to this
+General Public License and to the absence of any warranty; and give any
+other recipients of the Program a copy of this General Public License
+along with the Program.  You may charge a fee for the physical act of
+transferring a copy.
+\par
+  2. You may modify your copy or copies of the Program or any portion of
+it, and copy and distribute such modifications under the terms of Paragraph
+1 above, provided that you also do the following:
+\par
+    a) cause the modified files to carry prominent notices stating that
+    you changed the files and the date of any change; and
+
+    b) cause the whole of any work that you distribute or publish, that
+    in whole or in part contains the Program or any part thereof, either
+    with or without modifications, to be licensed at no charge to all
+    third parties under the terms of this General Public License (except
+    that you may choose to grant warranty protection to some or all
+    third parties, at your option).
+\par
+    c) If the modified program normally reads commands interactively when
+    run, you must cause it, when started running for such interactive use
+    in the simplest and most usual way, to print or display an
+    announcement including an appropriate copyright notice and a notice
+    that there is no warranty (or else, saying that you provide a
+    warranty) and that users may redistribute the program under these
+    conditions, and telling the user how to view a copy of this General
+    Public License.
+\par
+    d) You may charge a fee for the physical act of transferring a
+    copy, and you may at your option offer warranty protection in
+    exchange for a fee.
+\par
+Mere aggregation of another independent work with the Program (or its
+derivative) on a volume of a storage or distribution medium does not bring
+the other work under the scope of these terms.
+\par
+  3. You may copy and distribute the Program (or a portion or derivative of
+it, under Paragraph 2) in object code or executable form under the terms of
+Paragraphs 1 and 2 above provided that you also do one of the following:
+\par
+    a) accompany it with the complete corresponding machine-readable
+    source code, which must be distributed under the terms of
+    Paragraphs 1 and 2 above; or,
+\par
+    b) accompany it with a written offer, valid for at least three
+    years, to give any third party free (except for a nominal charge
+    for the cost of distribution) a complete machine-readable copy of the
+    corresponding source code, to be distributed under the terms of
+    Paragraphs 1 and 2 above; or,
+\par
+    c) accompany it with the information you received as to where the
+    corresponding source code may be obtained.  (This alternative is
+    allowed only for noncommercial distribution and only if you
+    received the program in object code or executable form alone.)
+\par
+Source code for a work means the preferred form of the work for making
+modifications to it.  For an executable file, complete source code means
+all the source code for all modules it contains; but, as a special
+exception, it need not include source code for modules which are standard
+libraries that accompany the operating system on which the executable
+file runs, or for standard header files or definitions files that
+accompany that operating system.
+\par
+  4. You may not copy, modify, sublicense, distribute or transfer the
+Program except as expressly provided under this General Public License.
+Any attempt otherwise to copy, modify, sublicense, distribute or transfer
+the Program is void, and will automatically terminate your rights to use
+the Program under this License.  However, parties who have received
+copies, or rights to use copies, from you under this General Public
+License will not have their licenses terminated so long as such parties
+remain in full compliance.
+\par
+  5. By copying, distributing or modifying the Program (or any work based
+on the Program) you indicate your acceptance of this license to do so,
+and all its terms and conditions.
+\par
+  6. Each time you redistribute the Program (or any work based on the
+Program), the recipient automatically receives a license from the original
+licensor to copy, distribute or modify the Program subject to these
+terms and conditions.  You may not impose any further restrictions on the
+recipients' exercise of the rights granted herein.
+\par
+  7. The Free Software Foundation may publish revised and/or new versions
+of the General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+\par
+Each version is given a distinguishing version number.  If the Program
+specifies a version number of the license which applies to it and "any
+later version", you have the option of following the terms and conditions
+either of that version or of any later version published by the Free
+Software Foundation.  If the Program does not specify a version number of
+the license, you may choose any version ever published by the Free Software
+Foundation.
+\par
+  8. If you wish to incorporate parts of the Program into other free
+programs whose distribution conditions are different, write to the author
+to ask for permission.  For software which is copyrighted by the Free
+Software Foundation, write to the Free Software Foundation; we sometimes
+make exceptions for this.  Our decision will be guided by the two goals
+of preserving the free status of all derivatives of our free software and
+of promoting the sharing and reuse of software generally.
+\par
+			    NO WARRANTY
+\par
+  9. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+REPAIR OR CORRECTION.
+\par
+  10. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
+TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+\par
+		     END OF TERMS AND CONDITIONS
+}
+} {\plain \page}
+

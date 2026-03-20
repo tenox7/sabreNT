@@ -1,0 +1,22 @@
+/****************************************************************************
+
+
+ZVEDIT.RC
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#define MENU_1	1
+#define CM_EXIT	102
+
+MENU_1 MENU 
+{
+ POPUP "File"
+ {
+  MENUITEM "Exit", CM_EXIT
+ }
+
+}
+

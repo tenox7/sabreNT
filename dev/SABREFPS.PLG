@@ -1,0 +1,15 @@
+--------------------Configuration: sabrefps - Win32 Release--------------------
+Begining build with project "C:\Sabre\Dev\sabrefps.dsp", with item "Terrain.cpp"
+Active configuration is Win32 (x86) Application (based on Win32 (x86) Application)
+
+
+Creating temp file "C:\WINDOWS\TEMP\RSP11D1.TMP" with contents </nologo /G5 /Gd /ML /W3 /GX /I ".\\" /I ".\src" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "SABREWIN" /Fp"Release/sabrefps.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Sabre\Dev\Src\Terrain.cpp"
+>
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP11D1.TMP" 
+Compiling...
+Terrain.cpp
+
+
+
+Terrain.obj - 0 error(s), 0 warning(s)

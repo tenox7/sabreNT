@@ -1,0 +1,35 @@
+flites file
+# of flites
+(2)
+{
+  "MIGS001"
+  (2)
+  "FOXTROT"
+  "APACHE"
+  (1)
+  {
+    cap
+    wedge
+    ( 30000.0 20000.0 8000.0 420 8000 0.0 )
+    ( 0 0 0 )
+    ( 0.0 0.0 0.0 )
+    "migs"
+  }	
+}
+{
+  "SABRES001"
+  (3)
+  "ALPHA"
+  "Silks"
+  "MommaMia"
+  (1)
+  {
+    cap
+    wedge
+    ( 300000.0 200000.0 8000.0 420 8000 0.0 )
+    ( 0 0 0 )
+    ( 0.0 0.0 0.0 )
+    "sabres"
+  }	
+}
+

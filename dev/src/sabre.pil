@@ -1,0 +1,51 @@
+*******************************************
+* Pilot params file                       *
+*******************************************
+# of params. 2 for now, one for each
+* side
+(2)
+*******************************************
+* For now, other than the affiliation,    *
+* we're keeping the params identical.     *
+* Potentially, each pilot can have their  *
+* own params to create an interesting     *
+* variety of behavior.                    *
+*******************************************
+(
+10 0 0.0
+10.0 0.0 4.5
+0.2 100.0 0.0
+0.0 0.0
+0.0 -2.0 0.1 0.1
+18 10 32 30
+5.0
+)
+(
+10 1 0.0
+10.0 0.0 4.5
+0.2 100.0 0.0
+0.0 0.0
+0.0 -2.0 0.1 0.1
+18 10 32 30
+5.0
+)
+*
+* For reference, the Pilot_Params class operator >>
+istream &operator >>(istream &is, Pilot_Params &ps)
+{
+  char c= ' ';
+  READ_TOK('(',is,c);
+  is >> ps.skill_level >> ps.affiliation >> ps.update_time;
+  is >> ps.mparam1 >> ps.mparam2 >> ps.mparam3;
+  is >> ps.mparam4 >> ps.mparam5 >> ps.mparam6;
+  is >> ps.mdampy >> ps.mdampx;
+  is >> ps.mparam7 >> ps.mparam8 >> ps.mparam9 >> ps.mparam10;
+  is >> ps.c_step1 >> ps.c_step2 >> ps.c_step3 >> ps.c_step4;
+  is >> ps.v_acquire_range;
+  is >> c;
+  READ_TOK(')',is,c);
+  ps.v_acquire_range = m2f(ps.v_acquire_range);
+  return is;
+}
+
+

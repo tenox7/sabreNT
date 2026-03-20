@@ -1,0 +1,84 @@
+--------------------Configuration: sabredx - Win32 Debug--------------------
+Begining build with project "C:\sabre\dev\sabredx.dsp", with item "wvga13dx.cpp"
+Active configuration is Win32 (x86) Application (based on Win32 (x86) Application)
+
+
+Creating temp file "C:\WINDOWS\TEMP\RSP2234.TMP" with contents </nologo /MLd /W3 /Gm /GX /Zi /Od /I ".\\" /I ".\src\\" /I "\mssdk_7\include" /I ".\d3dframe" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "SABREWIN" /D "USES_DDRAW" /D "USES_D3D" /Fp"Debug/sabredx.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\sabre\dev\Src\wvga13dx.cpp"
+>
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP2234.TMP" 
+Compiling...
+wvga13dx.cpp
+C:\sabre\dev\Src\wvga13dx.cpp(155) : error C2065: 'ddsd' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(156) : error C2228: left of '.dwSize' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(157) : error C2228: left of '.dwFlags' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(161) : error C2228: left of '.ddsCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(161) : error C2228: left of '.dwCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(162) : error C2228: left of '.dwWidth' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(163) : error C2228: left of '.dwHeight' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(164) : error C2228: left of '.dwZBufferBitDepth' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(165) : error C2065: 'lpdd' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(165) : error C2227: left of '->CreateSurface' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(165) : error C2065: 'lpddszbuffer' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(174) : error C2227: left of '->QueryInterface' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(181) : error C2065: 'd3dName' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(181) : error C2440: '=' : cannot convert from 'char [4]' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(182) : error C2065: 'lpddssecondary' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(183) : error C2065: 'lpDeviceDesc' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(183) : error C2065: 'hal' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(183) : error C2440: '=' : cannot convert from 'int *' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(186) : error C2440: '=' : cannot convert from 'char [4]' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(188) : error C2065: 'hel' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(188) : error C2440: '=' : cannot convert from 'int *' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(192) : error C2440: '=' : cannot convert from 'char [4]' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(197) : error C2440: '=' : cannot convert from 'char [5]' to 'int'
+                                                  This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\sabre\dev\Src\wvga13dx.cpp(205) : error C2228: left of '.dwSize' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(207) : error C2228: left of '.dwSize' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(211) : error C2228: left of '.dpcTriCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(211) : error C2228: left of '.dwTextureCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(215) : error C2065: 'lpd3dViewport' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(234) : error C2227: left of '->SetViewport2' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(238) : error C2065: 'TEST_BMP' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(241) : error C2664: 'CreateMaterial' : cannot convert parameter 1 from 'struct IDirect3DMaterial2 ** ' to 'struct IDirect3DMaterial3 ** '
+C:\sabre\dev\Src\wvga13dx.cpp(257) : error C2664: 'GetHandle' : cannot convert parameter 1 from 'struct IDirect3DDevice3 *' to 'struct IDirect3DDevice2 *'
+C:\sabre\dev\Src\wvga13dx.cpp(287) : error C2065: 'pd3dDevice' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(287) : error C2227: left of '->GetDirect3D' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(328) : error C2227: left of '->SetCooperativeLevel' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(331) : error C2227: left of '->SetDisplayMode' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(335) : error C2228: left of '.dwSize' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(336) : error C2228: left of '.dwFlags' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(337) : error C2228: left of '.ddsCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(337) : error C2228: left of '.dwCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(339) : error C2228: left of '.dwBackBufferCount' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(340) : error C2227: left of '->CreateSurface' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(340) : error C2065: 'lpddsprimary' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(342) : error C2065: 'ddscaps' : undeclared identifier
+C:\sabre\dev\Src\wvga13dx.cpp(342) : error C2228: left of '.dwCaps' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(343) : error C2227: left of '->GetAttachedSurface' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(358) : error C2227: left of '->CreatePalette' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(361) : error C2227: left of '->SetPalette' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(362) : error C2227: left of '->SetPalette' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(444) : error C2227: left of '->IsLost' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(445) : error C2227: left of '->Restore' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(446) : error C2227: left of '->Flip' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(552) : error C2227: left of '->Lock' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(553) : error C2228: left of '.lPitch' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(554) : error C2228: left of '.lpSurface' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(559) : error C2227: left of '->Unlock' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(559) : error C2228: left of '.lpSurface' must have class/struct/union type
+C:\sabre\dev\Src\wvga13dx.cpp(564) : error C2227: left of '->FlipToGDISurface' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(586) : error C2227: left of '->Blt' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(589) : error C2227: left of '->Blt' must point to class/struct/union
+C:\sabre\dev\Src\wvga13dx.cpp(704) : error C2664: 'Load' : cannot convert parameter 1 from 'struct IDirect3DDevice3 *' to 'struct IDirect3DDevice2 *'
+C:\sabre\dev\Src\wvga13dx.cpp(760) : error C2664: 'Load' : cannot convert parameter 1 from 'struct IDirect3DDevice3 *' to 'struct IDirect3DDevice2 *'
+Error executing cl.exe.
+
+
+
+wvga13dx.obj - 62 error(s), 0 warning(s)

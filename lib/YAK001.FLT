@@ -1,0 +1,20 @@
+* Flight Manager root resource file
+* Number of flight specs files, followed
+* by path to each spec
+2
+yak09.spc
+mig15.spc
+* Number of shape files, followed by
+* path to each
+2
+yak09.shp
+mig15.shp
+* Path to pilot spec file
+sabre.pil
+* Path to weapons file
+sabre.wpn
+* Path to waypoint file
+lesson1.wps
+* Path to nodes file
+yak001.nds
+*

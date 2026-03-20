@@ -1,0 +1,18 @@
+* Flight Manager root resource file
+* Number of flight specs files, followed
+* by path to each spec
+1
+f84.spc
+* Number of shape files, followed by
+* path to each
+1
+f84.shp
+* Path to pilot spec file
+sabre.pil
+* Path to weapons file
+sabre.wpn
+* Path to waypoint file
+lesson1.wps
+* Path to nodes file
+f84fly.nds
+*
