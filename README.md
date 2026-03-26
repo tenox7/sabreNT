@@ -1,5 +1,7 @@
 # SABRE Fighter Plane Simulator
 
+![sabreNT](sabreNT.png)
+
 Windows NT RISC Port
 
 Builds with Visual Studio 4.0, CL 10.
