@@ -160,7 +160,7 @@ public:
   static Pilot   *pilots[];
   static int     npilots;
   static int     maxpilots;
-  static initPilot();
+  static int initPilot();
   static Pilot *getPilot(char *hndle);
   static float xpixel_adjust, ypixel_adjust;
 
