@@ -66,19 +66,27 @@ int WinJoy::open()
 		memset((char *)&joyCaps,0,sizeof(JOYCAPS));
 		if (joyGetDevCaps(joyId,&joyCaps,sizeof(JOYCAPS)) == JOYERR_NOERROR)
 		{
+#ifdef JOYCAPS_HASZ
 			naxis = joyCaps.wNumAxes;
 			has_z = ((joyCaps.wCaps & JOYCAPS_HASZ) != 0) && joyCaps.wNumAxes >= 3;
 			has_r = ((joyCaps.wCaps & JOYCAPS_HASR) != 0) && joyCaps.wNumAxes >= 4;
+#else
+			/* NT 3.5 (PINT 3.5): the joystick API of Windows 3.1, which tells no
+			   axes or hat: X and Y and the buttons */
+			naxis = 2;
+#endif
 			min_x = joyCaps.wXmin;
 			max_x = joyCaps.wXmax;
 			min_y = joyCaps.wYmin;
 			max_y = joyCaps.wYmax;
 			min_z = joyCaps.wZmin;
 			max_z = joyCaps.wZmax;
+#ifdef JOYCAPS_HASZ
 			min_r = joyCaps.wRmin;
 			max_r = joyCaps.wRmax;
 			if ((joyCaps.wCaps & JOYCAPS_HASPOV) && (joyCaps.wCaps & JOYCAPS_POV4DIR))
 				has_pov = 1;
+#endif
 			active = 1;
 		}
 		else
@@ -110,6 +118,7 @@ int WinJoy::update()
    raw_y =	joyInfo.wYpos;
 	raw_z = joyInfo.wZpos;
 
+#ifdef JOYCAPS_HASZ
 	if (has_r || has_pov)
 	{
 		JOYINFOEX joyInfoEx;
@@ -147,6 +156,7 @@ int WinJoy::update()
 			}
 		}
 	}
+#endif
 
    cooked_x = (float)( -1.0 + (((float)raw_x) / ((float)(max_x - min_x + 1)) * 2.0 ));
    cooked_y = (float)( -1.0 + (((float)raw_y) / ((float)(max_y - min_y + 1)) * 2.0 ));
